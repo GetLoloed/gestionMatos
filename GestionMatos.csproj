@@ -89,8 +89,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Data_Interventions.cs" />
+    <Compile Include="Fonctions\Fcts_DB.cs" />
+    <Compile Include="Fonctions\Fcts_Interventions.cs" />
+    <Compile Include="Forms\FormAjouModif\Form_AM_Interventions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAjouModif\Form_AM_Interventions.Designer.cs">
+      <DependentUpon>Form_AM_Interventions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Menu.Designer.cs">
+      <DependentUpon>Form_Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsrControl\UserControl_Interventions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsrControl\UserControl_Interventions.Designer.cs">
+      <DependentUpon>UserControl_Interventions.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\FormAjouModif\Form_AM_Interventions.resx">
+      <DependentUpon>Form_AM_Interventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Menu.resx">
+      <DependentUpon>Form_Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -100,6 +127,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UsrControl\UserControl_Interventions.resx">
+      <DependentUpon>UserControl_Interventions.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -114,5 +144,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
