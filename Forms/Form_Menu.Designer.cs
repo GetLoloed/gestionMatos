@@ -37,6 +37,7 @@ namespace GestionMatos.Forms
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userControl_Interventions = new GestionMatos.UsrControl.UserControl_Interventions();
+            this.userControl_Materiels = new GestionMatos.UsrControl.UserControl_Materiels();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +79,7 @@ namespace GestionMatos.Forms
             this.materielsToolStripMenuItem.Name = "materielsToolStripMenuItem";
             this.materielsToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.materielsToolStripMenuItem.Text = "Materiels";
+            this.materielsToolStripMenuItem.Click += new System.EventHandler(this.materielsToolStripMenuItem_Click);
             // 
             // typesDeMaterielsToolStripMenuItem
             // 
@@ -110,16 +112,27 @@ namespace GestionMatos.Forms
             this.userControl_Interventions.Size = new System.Drawing.Size(1688, 777);
             this.userControl_Interventions.TabIndex = 2;
             // 
+            // userControl_Materiels
+            // 
+            this.userControl_Materiels.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Materiels.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.userControl_Materiels.Location = new System.Drawing.Point(0, 24);
+            this.userControl_Materiels.Margin = new System.Windows.Forms.Padding(4);
+            this.userControl_Materiels.Name = "userControl_Materiels";
+            this.userControl_Materiels.Size = new System.Drawing.Size(1688, 777);
+            this.userControl_Materiels.TabIndex = 3;
+            // 
             // Form_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1688, 801);
+            this.Controls.Add(this.userControl_Materiels);
             this.Controls.Add(this.userControl_Interventions);
             this.Controls.Add(this.menuMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.MainMenuStrip = this.menuMain;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
@@ -139,5 +152,6 @@ namespace GestionMatos.Forms
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sitesToolStripMenuItem;
         private UsrControl.UserControl_Interventions userControl_Interventions;
+        private UsrControl.UserControl_Materiels userControl_Materiels;
     }
 }

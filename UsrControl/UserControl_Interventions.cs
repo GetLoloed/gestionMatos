@@ -20,6 +20,18 @@ namespace GestionMatos.UsrControl
         public void Display()
         {
             Fcts_DB.AffichNRech("call getInter()", dgvInter);
+            Fcts_DB.ComboData(
+                "SELECT '' as id_client, '-- Choisir un client --' AS nom UNION SELECT id_client, nom FROM client ORDER BY nom",
+                "nom", "id_client", cbClient);
+            Fcts_DB.ComboData(
+                "SELECT '' as id_type, '-- Choisir un type --' AS nom UNION SELECT id_type, nom FROM typemateriel ORDER BY nom",
+                "nom", "id_type", cbTypeMat);
+            Fcts_DB.ComboData(
+                "SELECT '' as id_mat, '-- Choisir un materiel --' AS nom UNION SELECT id_mat, nom FROM materiel ORDER BY nom",
+                "nom", "id_mat", cbMateriel);
+            Fcts_DB.ComboData(
+                "SELECT '' as id_site, '-- Choisir un site --' AS nom UNION SELECT id_site, nom FROM site ORDER BY nom",
+                "nom", "id_site", cbSite);
         }
 
         

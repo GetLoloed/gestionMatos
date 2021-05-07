@@ -21,6 +21,7 @@ namespace GestionMatos.Forms
         private void hideAll()
         {
             userControl_Interventions.Hide();
+            userControl_Materiels.Hide();
         }
 
         private void accueilToolStripMenuItem_Click(object sender, EventArgs e)
@@ -32,7 +33,15 @@ namespace GestionMatos.Forms
         {
             userControl_Interventions.Show();
             userControl_Interventions.Display();
+            userControl_Materiels.Hide();
+            
         }
 
+        private void materielsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            userControl_Materiels.Show();
+            userControl_Materiels.Display();
+            userControl_Interventions.Hide();
+        }
     }
 }
