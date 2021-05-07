@@ -258,12 +258,15 @@ namespace GestionMatos.Forms.FormAjouModif
             // 
             // btnEnr
             // 
+            this.btnEnr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
+            this.btnEnr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnr.ForeColor = System.Drawing.Color.White;
             this.btnEnr.Location = new System.Drawing.Point(87, 437);
             this.btnEnr.Name = "btnEnr";
             this.btnEnr.Size = new System.Drawing.Size(369, 26);
             this.btnEnr.TabIndex = 4;
             this.btnEnr.Text = "Ajouter";
-            this.btnEnr.UseVisualStyleBackColor = true;
+            this.btnEnr.UseVisualStyleBackColor = false;
             this.btnEnr.Click += new System.EventHandler(this.btnEnr_Click);
             // 
             // Form_AM_Materiels

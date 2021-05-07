@@ -1,8 +1,8 @@
-﻿using GestionMatos.Data;
+﻿using System;
+using System.Windows.Forms;
+using GestionMatos.Data;
 using GestionMatos.Fonctions;
 using GestionMatos.UsrControl;
-using System;
-using System.Windows.Forms;
 
 namespace GestionMatos.Forms.FormAjouModif
 {
@@ -19,12 +19,11 @@ namespace GestionMatos.Forms.FormAjouModif
 
         public void Clear()
         {
-            txtAdresse.Text = txtNom.Text = txtCp.Text = txtVille.Text = String.Empty;
+            txtAdresse.Text = txtNom.Text = txtCp.Text = txtVille.Text = string.Empty;
         }
 
         public void ModifSite()
         {
-            
             lblAM.Text = "Modification d'un site";
             btnEnr.Text = "Modifier";
             txtNom.Text = nom;
@@ -53,12 +52,10 @@ namespace GestionMatos.Forms.FormAjouModif
                     var dataSite = new Data_Sites(txtNom.Text.Trim(), txtAdresse.Text.Trim(), txtCp.Text.Trim(),
                         txtVille.Text.Trim());
                     Fcts_Sites.ModifierSite(dataSite, id);
-                
                 }
             }
 
             _parent.Display();
         }
-
     }
 }

@@ -29,6 +29,8 @@ namespace GestionMatos.UsrControl
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.lblGestInter = new System.Windows.Forms.Label();
             this.dgvSites = new System.Windows.Forms.DataGridView();
@@ -52,7 +54,7 @@ namespace GestionMatos.UsrControl
             this.pnlTop.Controls.Add(this.lblGestInter);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(5);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(2224, 54);
             this.pnlTop.TabIndex = 2;
@@ -152,6 +154,12 @@ namespace GestionMatos.UsrControl
             // 
             // Column4
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column4.HeaderText = "";
             this.Column4.Name = "Column4";
             this.Column4.Text = "Modifier";
@@ -159,6 +167,12 @@ namespace GestionMatos.UsrControl
             // 
             // Column5
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(92)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(92)))), ((int)(((byte)(85)))));
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column5.HeaderText = "";
             this.Column5.Name = "Column5";
             this.Column5.Text = "Supprimer";
@@ -172,7 +186,7 @@ namespace GestionMatos.UsrControl
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControl_Sites";
             this.Size = new System.Drawing.Size(2224, 849);
             this.pnlTop.ResumeLayout(false);

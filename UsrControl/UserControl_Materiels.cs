@@ -1,14 +1,14 @@
-﻿using System.Data;
+﻿using System;
+using System.Windows.Forms;
 using GestionMatos.Fonctions;
 using GestionMatos.Forms.FormAjouModif;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace GestionMatos.UsrControl
 {
     public partial class UserControl_Materiels : UserControl
     {
         private readonly Form_AM_Materiels formAm;
+
         public UserControl_Materiels()
         {
             InitializeComponent();
@@ -38,7 +38,6 @@ namespace GestionMatos.UsrControl
             {
                 Fcts_Materiels.EstIntervenu(dgvMat.Rows[e.RowIndex].Cells[3].Value.ToString());
                 Display();
-                return;
             }
             else if (e.ColumnIndex == 1)
             {
@@ -58,7 +57,8 @@ namespace GestionMatos.UsrControl
             }
             else if (e.ColumnIndex == 2)
             {
-                if (MessageBox.Show("Voulez-vous vraiment supprimer ce materiel ?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Voulez-vous vraiment supprimer ce materiel ?", "Information",
+                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Fcts_Materiels.SupprMateriel(dgvMat.Rows[e.RowIndex].Cells[3].Value.ToString());
                     Display();
@@ -66,18 +66,22 @@ namespace GestionMatos.UsrControl
             }
         }
 
-        private void btnAjMat_Click(object sender, System.EventArgs e)
+        private void btnAjMat_Click(object sender, EventArgs e)
         {
             formAm.MultipleCb();
             formAm.ShowDialog();
         }
 
-        private void btnRech_Click(object sender, System.EventArgs e)
+        private void btnRech_Click(object sender, EventArgs e)
         {
-            Fcts_DB.AffichNRech("select m.id_mat,m.nom,m.referenece,m.descr,m.date_instal,m.mtbf,if(isnull((SELECT intervention.dateInter FROM materiel as t1 LEFT JOIN intervention ON intervention.id_mat = t1.id_mat WHERE t1.id_mat = m.id_mat order by intervention.dateInter desc limit 1)), m.date_instal, (SELECT intervention.dateInter FROM materiel as m LEFT JOIN intervention ON intervention.id_mat = m.id_mat WHERE m.id_mat = m.id_mat order by intervention.dateInter desc limit 1)) as dateDernInter, ADDDATE(if(isnull((SELECT intervention.dateInter FROM materiel as t1 LEFT JOIN intervention ON intervention.id_mat = t1.id_mat WHERE t1.id_mat = m.id_mat order by intervention.dateInter desc limit 1)), m.date_instal, (SELECT intervention.dateInter FROM materiel as t1 LEFT JOIN intervention ON intervention.id_mat = t1.id_mat WHERE t1.id_mat = m.id_mat order by intervention.dateInter desc limit 1)),m.mtbf) as Datelimite, if(perime = 'True', 'oui', 'non') as perimeON, t.nom  as nomType,s.nom as nomSite, c.nom as nomClient from materiel m left join typemateriel t on t.id_type = m.id_type left join site s on s.id_site = m.id_site left join client c on c.id_client = m.id_client WHERE m.id_mat LIKE '%"+cbMateriel.SelectedValue+"' and c.id_client like '%"+cbClient.SelectedValue+"' and t.id_type like  '%"+cbTypeMat.SelectedValue+"' and s.id_site like '%"+cbSite.SelectedValue+"' order by perimeON, nom", dgvMat);
+            Fcts_DB.AffichNRech(
+                "select m.id_mat,m.nom,m.referenece,m.descr,m.date_instal,m.mtbf,if(isnull((SELECT intervention.dateInter FROM materiel as t1 LEFT JOIN intervention ON intervention.id_mat = t1.id_mat WHERE t1.id_mat = m.id_mat order by intervention.dateInter desc limit 1)), m.date_instal, (SELECT intervention.dateInter FROM materiel as m LEFT JOIN intervention ON intervention.id_mat = m.id_mat WHERE m.id_mat = m.id_mat order by intervention.dateInter desc limit 1)) as dateDernInter, ADDDATE(if(isnull((SELECT intervention.dateInter FROM materiel as t1 LEFT JOIN intervention ON intervention.id_mat = t1.id_mat WHERE t1.id_mat = m.id_mat order by intervention.dateInter desc limit 1)), m.date_instal, (SELECT intervention.dateInter FROM materiel as t1 LEFT JOIN intervention ON intervention.id_mat = t1.id_mat WHERE t1.id_mat = m.id_mat order by intervention.dateInter desc limit 1)),m.mtbf) as Datelimite, if(perime = 'True', 'oui', 'non') as perimeON, t.nom  as nomType,s.nom as nomSite, c.nom as nomClient from materiel m left join typemateriel t on t.id_type = m.id_type left join site s on s.id_site = m.id_site left join client c on c.id_client = m.id_client WHERE m.id_mat LIKE '%" +
+                cbMateriel.SelectedValue + "' and c.id_client like '%" + cbClient.SelectedValue +
+                "' and t.id_type like  '%" + cbTypeMat.SelectedValue + "' and s.id_site like '%" +
+                cbSite.SelectedValue + "' order by perimeON, nom", dgvMat);
         }
 
-        private void btnReini_Click(object sender, System.EventArgs e)
+        private void btnReini_Click(object sender, EventArgs e)
         {
             cbMateriel.SelectedValue = cbSite.SelectedValue = cbTypeMat.SelectedValue = cbClient.SelectedValue = "";
             Display();

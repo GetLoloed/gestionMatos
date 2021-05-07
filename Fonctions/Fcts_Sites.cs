@@ -1,13 +1,13 @@
-﻿using GestionMatos.Data;
-using MySql.Data.MySqlClient;
-using System.Data;
+﻿using System.Data;
 using System.Windows.Forms;
+using GestionMatos.Data;
+using MySql.Data.MySqlClient;
 
 namespace GestionMatos.Fonctions
 {
-    class Fcts_Sites
+    internal class Fcts_Sites
     {
-                public static void AjouterSite(Data_Sites dataSite)
+        public static void AjouterSite(Data_Sites dataSite)
         {
             // Fonction permettant l'ajout d'un nouveau site.
             var sql =

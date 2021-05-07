@@ -1,11 +1,11 @@
-﻿using GestionMatos.Data;
-using MySql.Data.MySqlClient;
-using System.Data;
+﻿using System.Data;
 using System.Windows.Forms;
+using GestionMatos.Data;
+using MySql.Data.MySqlClient;
 
 namespace GestionMatos.Fonctions
 {
-    class Fcts_Interventions
+    internal class Fcts_Interventions
     {
         public static void AjoutInter(Data_Interventions dataInter)
         {

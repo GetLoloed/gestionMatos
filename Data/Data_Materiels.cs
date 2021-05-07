@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GestionMatos.Data
+﻿namespace GestionMatos.Data
 {
-    class Data_Materiels
+    internal class Data_Materiels
     {
-        public Data_Materiels(string Nom, string Referenece, string Descr, string Date_instal, string Mtbf, string Perime, string Id_type, string Id_site, string Id_client)
+        public Data_Materiels(string Nom, string Referenece, string Descr, string Date_instal, string Mtbf,
+            string Perime, string Id_type, string Id_site, string Id_client)
         {
             this.Nom = Nom;
             this.Referenece = Referenece;

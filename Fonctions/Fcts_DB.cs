@@ -1,11 +1,11 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace GestionMatos.Fonctions
 {
-    class Fcts_DB
+    internal class Fcts_DB
     {
         public static MySqlConnection GetConnection()
         {

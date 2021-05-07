@@ -29,16 +29,18 @@ namespace GestionMatos.UsrControl
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.lblGestInter = new System.Windows.Forms.Label();
             this.dgvClients = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAjInter = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAjInter = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).BeginInit();
             this.panel2.SuspendLayout();
@@ -93,39 +95,6 @@ namespace GestionMatos.UsrControl
             this.dgvClients.TabIndex = 2;
             this.dgvClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClients_CellClick);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "id_client";
-            this.Column1.HeaderText = "id";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "nom";
-            this.Column2.HeaderText = "Nom";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "adresse";
-            this.Column3.HeaderText = "Adresse";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "";
-            this.Column4.Name = "Column4";
-            this.Column4.Text = "Modifier";
-            this.Column4.UseColumnTextForButtonValue = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "";
-            this.Column5.Name = "Column5";
-            this.Column5.Text = "Supprimer";
-            this.Column5.UseColumnTextForButtonValue = true;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnAjInter);
@@ -147,6 +116,51 @@ namespace GestionMatos.UsrControl
             this.btnAjInter.Text = "Ajouter un nouveau client";
             this.btnAjInter.UseVisualStyleBackColor = false;
             this.btnAjInter.Click += new System.EventHandler(this.btnAjInter_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id_client";
+            this.Column1.HeaderText = "id";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nom";
+            this.Column2.HeaderText = "Nom";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "adresse";
+            this.Column3.HeaderText = "Adresse";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column4.HeaderText = "";
+            this.Column4.Name = "Column4";
+            this.Column4.Text = "Modifier";
+            this.Column4.UseColumnTextForButtonValue = true;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(92)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(92)))), ((int)(((byte)(85)))));
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column5.HeaderText = "";
+            this.Column5.Name = "Column5";
+            this.Column5.Text = "Supprimer";
+            this.Column5.UseColumnTextForButtonValue = true;
             // 
             // UserControl_Clients
             // 

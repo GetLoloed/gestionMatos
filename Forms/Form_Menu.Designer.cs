@@ -33,7 +33,6 @@ namespace GestionMatos.Forms
             this.accueilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interventionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materielsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.typesDeMaterielsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userControl_Materiels = new GestionMatos.UsrControl.UserControl_Materiels();
@@ -50,7 +49,6 @@ namespace GestionMatos.Forms
             this.accueilToolStripMenuItem,
             this.interventionsToolStripMenuItem,
             this.materielsToolStripMenuItem,
-            this.typesDeMaterielsToolStripMenuItem,
             this.clientsToolStripMenuItem,
             this.sitesToolStripMenuItem});
             this.menuMain.Location = new System.Drawing.Point(0, 0);
@@ -82,13 +80,6 @@ namespace GestionMatos.Forms
             this.materielsToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.materielsToolStripMenuItem.Text = "Materiels";
             this.materielsToolStripMenuItem.Click += new System.EventHandler(this.materielsToolStripMenuItem_Click);
-            // 
-            // typesDeMaterielsToolStripMenuItem
-            // 
-            this.typesDeMaterielsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.typesDeMaterielsToolStripMenuItem.Name = "typesDeMaterielsToolStripMenuItem";
-            this.typesDeMaterielsToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
-            this.typesDeMaterielsToolStripMenuItem.Text = "Types de materiels";
             // 
             // clientsToolStripMenuItem
             // 
@@ -174,7 +165,6 @@ namespace GestionMatos.Forms
         private System.Windows.Forms.ToolStripMenuItem accueilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem interventionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem materielsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem typesDeMaterielsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sitesToolStripMenuItem;
         private UsrControl.UserControl_Interventions userControl_Interventions;

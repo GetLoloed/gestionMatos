@@ -136,6 +136,7 @@ namespace GestionMatos.Forms.FormAjouModif
             // btnEnr
             // 
             this.btnEnr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
+            this.btnEnr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnr.ForeColor = System.Drawing.Color.White;
             this.btnEnr.Location = new System.Drawing.Point(15, 433);
             this.btnEnr.Name = "btnEnr";

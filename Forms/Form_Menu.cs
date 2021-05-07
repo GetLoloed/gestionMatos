@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using GestionMatos.UsrControl;
 
 namespace GestionMatos.Forms
 {
@@ -34,7 +33,6 @@ namespace GestionMatos.Forms
             userControl_Materiels.Hide();
             userControl_Clients.Hide();
             userControl_Sites.Hide();
-            
         }
 
         private void materielsToolStripMenuItem_Click(object sender, EventArgs e)

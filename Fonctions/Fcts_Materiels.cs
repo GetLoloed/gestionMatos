@@ -1,15 +1,16 @@
-﻿using GestionMatos.Data;
-using MySql.Data.MySqlClient;
-using System.Data;
+﻿using System.Data;
 using System.Windows.Forms;
+using GestionMatos.Data;
+using MySql.Data.MySqlClient;
 
 namespace GestionMatos.Fonctions
 {
-    class Fcts_Materiels
+    internal class Fcts_Materiels
     {
         public static void AjoutMateriel(Data_Materiels DataMAt)
         {
-            var sql = "insert into materiel (id_mat, nom, referenece, descr, date_instal, mtbf, perime, id_type, id_site, id_client) values (NULL, @nom, @referenece, @descr, @date_instal, @mtbf, @perime, @id_type, @id_site, @id_client)";
+            var sql =
+                "insert into materiel (id_mat, nom, referenece, descr, date_instal, mtbf, perime, id_type, id_site, id_client) values (NULL, @nom, @referenece, @descr, @date_instal, @mtbf, @perime, @id_type, @id_site, @id_client)";
             var con = Fcts_DB.GetConnection();
             var cmd = new MySqlCommand(sql, con)
             {

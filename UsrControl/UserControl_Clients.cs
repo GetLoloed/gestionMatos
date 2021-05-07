@@ -1,13 +1,14 @@
-﻿using GestionMatos.Fonctions;
-using GestionMatos.Forms.FormAjouModif;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using GestionMatos.Fonctions;
+using GestionMatos.Forms.FormAjouModif;
 
 namespace GestionMatos.UsrControl
 {
     public partial class UserControl_Clients : UserControl
     {
         private readonly Form_AM_Clients formAm;
+
         public UserControl_Clients()
         {
             InitializeComponent();
@@ -33,15 +34,14 @@ namespace GestionMatos.UsrControl
                 formAm.adresse = dgvClients.Rows[e.RowIndex].Cells[4].Value.ToString();
                 formAm.ModifClient();
                 formAm.ShowDialog();
-                return;
             }
             else if (e.ColumnIndex == 1)
             {
-                if (MessageBox.Show("Voulez-vous vraiment supprimer ce client ?", "Information", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+                if (MessageBox.Show("Voulez-vous vraiment supprimer ce client ?", "Information",
+                    MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
                 {
                     Fcts_Clients.SupprClient(dgvClients.Rows[e.RowIndex].Cells[2].Value.ToString());
                     Display();
-                    return;
                 }
             }
         }

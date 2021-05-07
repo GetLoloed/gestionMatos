@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GestionMatos.Data;
 using GestionMatos.Fonctions;
@@ -18,6 +11,12 @@ namespace GestionMatos.Forms.FormAjouModif
         private readonly UserControl_Clients _parent;
         public string id, nom, adresse;
 
+        public Form_AM_Clients(UserControl_Clients parent)
+        {
+            InitializeComponent();
+            _parent = parent;
+        }
+
         private void btnEnr_Click(object sender, EventArgs e)
         {
             if (txtNom.Text == "" || txtAdresse.Text == "")
@@ -29,23 +28,17 @@ namespace GestionMatos.Forms.FormAjouModif
             {
                 if (btnEnr.Text == "Ajouter")
                 {
-                    var dataClient = new Data_Clients(txtNom.Text.ToString().Trim(), txtAdresse.Text.Trim());
+                    var dataClient = new Data_Clients(txtNom.Text.Trim(), txtAdresse.Text.Trim());
                     Fcts_Clients.AjouterClient(dataClient);
                 }
                 else if (btnEnr.Text == "Modifier")
                 {
-                    var dataClient = new Data_Clients(txtNom.Text.ToString().Trim(), txtAdresse.Text.Trim());
+                    var dataClient = new Data_Clients(txtNom.Text.Trim(), txtAdresse.Text.Trim());
                     Fcts_Clients.ModifierClient(dataClient, id);
                 }
             }
 
             _parent.Display();
-        }
-
-        public Form_AM_Clients(UserControl_Clients parent)
-        {
-            InitializeComponent();
-            _parent = parent;
         }
 
         public void ModifClient()

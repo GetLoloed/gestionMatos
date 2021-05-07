@@ -1,6 +1,6 @@
 ﻿namespace GestionMatos.Data
 {
-    class Data_Sites
+    internal class Data_Sites
     {
         public Data_Sites(string Nom, string Adresse, string Cp, string Ville)
         {

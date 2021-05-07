@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GestionMatos.Fonctions;
 using GestionMatos.Forms.FormAjouModif;
@@ -16,6 +8,7 @@ namespace GestionMatos.UsrControl
     public partial class UserControl_Sites : UserControl
     {
         private readonly Form_AM_Sites formAm;
+
         public UserControl_Sites()
         {
             InitializeComponent();
@@ -26,6 +19,7 @@ namespace GestionMatos.UsrControl
         {
             Fcts_DB.AffichNRech("select * from site", dgvSites);
         }
+
         private void btnAjInter_Click(object sender, EventArgs e)
         {
             formAm.Clear();
@@ -43,7 +37,6 @@ namespace GestionMatos.UsrControl
                 formAm.ville = dgvSites.Rows[e.RowIndex].Cells[6].Value.ToString();
                 formAm.ModifSite();
                 formAm.ShowDialog();
-                return;
             }
             else if (e.ColumnIndex == 1)
             {

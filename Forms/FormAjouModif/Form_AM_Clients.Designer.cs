@@ -35,8 +35,8 @@ namespace GestionMatos.Forms.FormAjouModif
             this.txtAdresse = new System.Windows.Forms.TextBox();
             this.btnEnr = new System.Windows.Forms.Button();
             this.pnlMid = new System.Windows.Forms.Panel();
-            this.lblNom = new System.Windows.Forms.Label();
             this.lblAdresse = new System.Windows.Forms.Label();
+            this.lblNom = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.pnlMid.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +47,7 @@ namespace GestionMatos.Forms.FormAjouModif
             this.pnlTop.Controls.Add(this.lblAM);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(289, 68);
             this.pnlTop.TabIndex = 1;
@@ -80,12 +80,15 @@ namespace GestionMatos.Forms.FormAjouModif
             // 
             // btnEnr
             // 
+            this.btnEnr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
+            this.btnEnr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnr.ForeColor = System.Drawing.Color.White;
             this.btnEnr.Location = new System.Drawing.Point(57, 239);
             this.btnEnr.Name = "btnEnr";
             this.btnEnr.Size = new System.Drawing.Size(181, 26);
             this.btnEnr.TabIndex = 4;
             this.btnEnr.Text = "Ajouter";
-            this.btnEnr.UseVisualStyleBackColor = true;
+            this.btnEnr.UseVisualStyleBackColor = false;
             this.btnEnr.Click += new System.EventHandler(this.btnEnr_Click);
             // 
             // pnlMid
@@ -98,15 +101,6 @@ namespace GestionMatos.Forms.FormAjouModif
             this.pnlMid.Size = new System.Drawing.Size(265, 147);
             this.pnlMid.TabIndex = 5;
             // 
-            // lblNom
-            // 
-            this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(7, 24);
-            this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(45, 17);
-            this.lblNom.TabIndex = 0;
-            this.lblNom.Text = "Nom :";
-            // 
             // lblAdresse
             // 
             this.lblAdresse.AutoSize = true;
@@ -115,6 +109,15 @@ namespace GestionMatos.Forms.FormAjouModif
             this.lblAdresse.Size = new System.Drawing.Size(68, 17);
             this.lblAdresse.TabIndex = 1;
             this.lblAdresse.Text = "Adresse :";
+            // 
+            // lblNom
+            // 
+            this.lblNom.AutoSize = true;
+            this.lblNom.Location = new System.Drawing.Point(7, 24);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(45, 17);
+            this.lblNom.TabIndex = 0;
+            this.lblNom.Text = "Nom :";
             // 
             // Form_AM_Clients
             // 
@@ -127,7 +130,7 @@ namespace GestionMatos.Forms.FormAjouModif
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlMid);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_AM_Clients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clients";

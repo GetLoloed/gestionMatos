@@ -1,6 +1,6 @@
 ﻿namespace GestionMatos.Data
 {
-    class Data_Interventions
+    internal class Data_Interventions
     {
         public Data_Interventions(string DateInter, string Com, string Id_mat)
         {

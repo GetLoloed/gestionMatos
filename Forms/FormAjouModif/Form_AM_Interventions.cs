@@ -1,8 +1,8 @@
-﻿using GestionMatos.Fonctions;
-using GestionMatos.UsrControl;
-using System;
+﻿using System;
 using System.Windows.Forms;
 using GestionMatos.Data;
+using GestionMatos.Fonctions;
+using GestionMatos.UsrControl;
 
 namespace GestionMatos.Forms.FormAjouModif
 {
@@ -64,10 +64,10 @@ namespace GestionMatos.Forms.FormAjouModif
                 }
                 else if (btnEnr.Text == "Modifier")
                 {
-                    var dataInter = new Data_Interventions(dtpInter.Text.ToString(), txtCom.Text.Trim(),
+                    var dataInter = new Data_Interventions(dtpInter.Text, txtCom.Text.Trim(),
                         cbMateriel.SelectedValue.ToString());
                     Fcts_Interventions.ModifInter(dataInter, id);
-                } 
+                }
             }
 
             _parent.Display();

@@ -29,9 +29,21 @@ namespace GestionMatos.UsrControl
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl_Materiels));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblGestInter = new System.Windows.Forms.Label();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.dgvMat = new System.Windows.Forms.DataGridView();
+            this.pnlActions = new System.Windows.Forms.Panel();
+            this.btnReini = new System.Windows.Forms.Button();
+            this.btnRech = new System.Windows.Forms.Button();
+            this.cbSite = new System.Windows.Forms.ComboBox();
+            this.cbTypeMat = new System.Windows.Forms.ComboBox();
+            this.cbMateriel = new System.Windows.Forms.ComboBox();
+            this.cbClient = new System.Windows.Forms.ComboBox();
+            this.btnAjMat = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,14 +59,6 @@ namespace GestionMatos.UsrControl
             this.Column11 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.pnlActions = new System.Windows.Forms.Panel();
-            this.btnReini = new System.Windows.Forms.Button();
-            this.btnRech = new System.Windows.Forms.Button();
-            this.cbSite = new System.Windows.Forms.ComboBox();
-            this.cbTypeMat = new System.Windows.Forms.ComboBox();
-            this.cbMateriel = new System.Windows.Forms.ComboBox();
-            this.cbClient = new System.Windows.Forms.ComboBox();
-            this.btnAjMat = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMat)).BeginInit();
             this.pnlActions.SuspendLayout();
@@ -118,6 +122,91 @@ namespace GestionMatos.UsrControl
             this.dgvMat.Size = new System.Drawing.Size(1668, 603);
             this.dgvMat.TabIndex = 2;
             this.dgvMat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMat_CellClick);
+            // 
+            // pnlActions
+            // 
+            this.pnlActions.Controls.Add(this.btnReini);
+            this.pnlActions.Controls.Add(this.btnRech);
+            this.pnlActions.Controls.Add(this.cbSite);
+            this.pnlActions.Controls.Add(this.cbTypeMat);
+            this.pnlActions.Controls.Add(this.cbMateriel);
+            this.pnlActions.Controls.Add(this.cbClient);
+            this.pnlActions.Controls.Add(this.btnAjMat);
+            this.pnlActions.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlActions.Location = new System.Drawing.Point(0, 44);
+            this.pnlActions.Name = "pnlActions";
+            this.pnlActions.Size = new System.Drawing.Size(1668, 43);
+            this.pnlActions.TabIndex = 3;
+            // 
+            // btnReini
+            // 
+            this.btnReini.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
+            this.btnReini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReini.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnReini.Image = ((System.Drawing.Image)(resources.GetObject("btnReini.Image")));
+            this.btnReini.Location = new System.Drawing.Point(1074, 11);
+            this.btnReini.Name = "btnReini";
+            this.btnReini.Size = new System.Drawing.Size(29, 23);
+            this.btnReini.TabIndex = 7;
+            this.btnReini.UseVisualStyleBackColor = false;
+            this.btnReini.Click += new System.EventHandler(this.btnReini_Click);
+            // 
+            // btnRech
+            // 
+            this.btnRech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
+            this.btnRech.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRech.Image = ((System.Drawing.Image)(resources.GetObject("btnRech.Image")));
+            this.btnRech.Location = new System.Drawing.Point(1033, 10);
+            this.btnRech.Name = "btnRech";
+            this.btnRech.Size = new System.Drawing.Size(35, 24);
+            this.btnRech.TabIndex = 4;
+            this.btnRech.UseVisualStyleBackColor = false;
+            this.btnRech.Click += new System.EventHandler(this.btnRech_Click);
+            // 
+            // cbSite
+            // 
+            this.cbSite.FormattingEnabled = true;
+            this.cbSite.Location = new System.Drawing.Point(816, 10);
+            this.cbSite.Name = "cbSite";
+            this.cbSite.Size = new System.Drawing.Size(211, 24);
+            this.cbSite.TabIndex = 6;
+            // 
+            // cbTypeMat
+            // 
+            this.cbTypeMat.FormattingEnabled = true;
+            this.cbTypeMat.Location = new System.Drawing.Point(599, 10);
+            this.cbTypeMat.Name = "cbTypeMat";
+            this.cbTypeMat.Size = new System.Drawing.Size(211, 24);
+            this.cbTypeMat.TabIndex = 5;
+            // 
+            // cbMateriel
+            // 
+            this.cbMateriel.FormattingEnabled = true;
+            this.cbMateriel.Location = new System.Drawing.Point(382, 10);
+            this.cbMateriel.Name = "cbMateriel";
+            this.cbMateriel.Size = new System.Drawing.Size(211, 24);
+            this.cbMateriel.TabIndex = 4;
+            // 
+            // cbClient
+            // 
+            this.cbClient.FormattingEnabled = true;
+            this.cbClient.Location = new System.Drawing.Point(165, 10);
+            this.cbClient.Name = "cbClient";
+            this.cbClient.Size = new System.Drawing.Size(211, 24);
+            this.cbClient.TabIndex = 3;
+            // 
+            // btnAjMat
+            // 
+            this.btnAjMat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
+            this.btnAjMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAjMat.ForeColor = System.Drawing.Color.White;
+            this.btnAjMat.Location = new System.Drawing.Point(3, 7);
+            this.btnAjMat.Name = "btnAjMat";
+            this.btnAjMat.Size = new System.Drawing.Size(156, 28);
+            this.btnAjMat.TabIndex = 1;
+            this.btnAjMat.Text = "Ajouter un materiel";
+            this.btnAjMat.UseVisualStyleBackColor = false;
+            this.btnAjMat.Click += new System.EventHandler(this.btnAjMat_Click);
             // 
             // Column1
             // 
@@ -194,6 +283,12 @@ namespace GestionMatos.UsrControl
             // 
             // Column11
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(202)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(202)))), ((int)(((byte)(238)))));
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column11.HeaderText = "";
             this.Column11.Name = "Column11";
             this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -203,6 +298,10 @@ namespace GestionMatos.UsrControl
             // 
             // Column12
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.Column12.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column12.HeaderText = "";
             this.Column12.Name = "Column12";
@@ -211,91 +310,16 @@ namespace GestionMatos.UsrControl
             // 
             // Column13
             // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(92)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(92)))), ((int)(((byte)(85)))));
+            this.Column13.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column13.HeaderText = "";
             this.Column13.Name = "Column13";
             this.Column13.Text = "Supprimer";
             this.Column13.UseColumnTextForButtonValue = true;
-            // 
-            // pnlActions
-            // 
-            this.pnlActions.Controls.Add(this.btnReini);
-            this.pnlActions.Controls.Add(this.btnRech);
-            this.pnlActions.Controls.Add(this.cbSite);
-            this.pnlActions.Controls.Add(this.cbTypeMat);
-            this.pnlActions.Controls.Add(this.cbMateriel);
-            this.pnlActions.Controls.Add(this.cbClient);
-            this.pnlActions.Controls.Add(this.btnAjMat);
-            this.pnlActions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlActions.Location = new System.Drawing.Point(0, 44);
-            this.pnlActions.Name = "pnlActions";
-            this.pnlActions.Size = new System.Drawing.Size(1668, 43);
-            this.pnlActions.TabIndex = 3;
-            // 
-            // btnReini
-            // 
-            this.btnReini.Location = new System.Drawing.Point(1114, 10);
-            this.btnReini.Name = "btnReini";
-            this.btnReini.Size = new System.Drawing.Size(75, 23);
-            this.btnReini.TabIndex = 7;
-            this.btnReini.Text = "button2";
-            this.btnReini.UseVisualStyleBackColor = true;
-            this.btnReini.Click += new System.EventHandler(this.btnReini_Click);
-            // 
-            // btnRech
-            // 
-            this.btnRech.Location = new System.Drawing.Point(1033, 10);
-            this.btnRech.Name = "btnRech";
-            this.btnRech.Size = new System.Drawing.Size(75, 23);
-            this.btnRech.TabIndex = 4;
-            this.btnRech.Text = "button1";
-            this.btnRech.UseVisualStyleBackColor = true;
-            this.btnRech.Click += new System.EventHandler(this.btnRech_Click);
-            // 
-            // cbSite
-            // 
-            this.cbSite.FormattingEnabled = true;
-            this.cbSite.Location = new System.Drawing.Point(816, 10);
-            this.cbSite.Name = "cbSite";
-            this.cbSite.Size = new System.Drawing.Size(211, 24);
-            this.cbSite.TabIndex = 6;
-            // 
-            // cbTypeMat
-            // 
-            this.cbTypeMat.FormattingEnabled = true;
-            this.cbTypeMat.Location = new System.Drawing.Point(599, 10);
-            this.cbTypeMat.Name = "cbTypeMat";
-            this.cbTypeMat.Size = new System.Drawing.Size(211, 24);
-            this.cbTypeMat.TabIndex = 5;
-            // 
-            // cbMateriel
-            // 
-            this.cbMateriel.FormattingEnabled = true;
-            this.cbMateriel.Location = new System.Drawing.Point(382, 10);
-            this.cbMateriel.Name = "cbMateriel";
-            this.cbMateriel.Size = new System.Drawing.Size(211, 24);
-            this.cbMateriel.TabIndex = 4;
-            // 
-            // cbClient
-            // 
-            this.cbClient.FormattingEnabled = true;
-            this.cbClient.Location = new System.Drawing.Point(165, 10);
-            this.cbClient.Name = "cbClient";
-            this.cbClient.Size = new System.Drawing.Size(211, 24);
-            this.cbClient.TabIndex = 3;
-            // 
-            // btnAjMat
-            // 
-            this.btnAjMat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
-            this.btnAjMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjMat.ForeColor = System.Drawing.Color.White;
-            this.btnAjMat.Location = new System.Drawing.Point(3, 7);
-            this.btnAjMat.Name = "btnAjMat";
-            this.btnAjMat.Size = new System.Drawing.Size(156, 28);
-            this.btnAjMat.TabIndex = 1;
-            this.btnAjMat.Text = "Ajouter un materiel";
-            this.btnAjMat.UseVisualStyleBackColor = false;
-            this.btnAjMat.Click += new System.EventHandler(this.btnAjMat_Click);
             // 
             // UserControl_Materiels
             // 
@@ -327,6 +351,8 @@ namespace GestionMatos.UsrControl
         private System.Windows.Forms.ComboBox cbMateriel;
         private System.Windows.Forms.ComboBox cbClient;
         private System.Windows.Forms.Button btnAjMat;
+        private System.Windows.Forms.Button btnReini;
+        private System.Windows.Forms.Button btnRech;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -342,7 +368,5 @@ namespace GestionMatos.UsrControl
         private System.Windows.Forms.DataGridViewButtonColumn Column11;
         private System.Windows.Forms.DataGridViewButtonColumn Column12;
         private System.Windows.Forms.DataGridViewButtonColumn Column13;
-        private System.Windows.Forms.Button btnReini;
-        private System.Windows.Forms.Button btnRech;
     }
 }
