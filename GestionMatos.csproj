@@ -89,11 +89,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Data_Clients.cs" />
     <Compile Include="Data\Data_Interventions.cs" />
     <Compile Include="Data\Data_Materiels.cs" />
+    <Compile Include="Fonctions\Fcts_Clients.cs" />
     <Compile Include="Fonctions\Fcts_DB.cs" />
     <Compile Include="Fonctions\Fcts_Interventions.cs" />
     <Compile Include="Fonctions\Fcts_Materiels.cs" />
+    <Compile Include="Forms\FormAjouModif\Form_AM_Clients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAjouModif\Form_AM_Clients.Designer.cs">
+      <DependentUpon>Form_AM_Clients.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAjouModif\Form_AM_Interventions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +122,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsrControl\UserControl_Clients.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsrControl\UserControl_Clients.Designer.cs">
+      <DependentUpon>UserControl_Clients.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsrControl\UserControl_Interventions.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +140,9 @@
     <Compile Include="UsrControl\UserControl_Materiels.Designer.cs">
       <DependentUpon>UserControl_Materiels.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormAjouModif\Form_AM_Clients.resx">
+      <DependentUpon>Form_AM_Clients.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAjouModif\Form_AM_Interventions.resx">
       <DependentUpon>Form_AM_Interventions.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +161,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UsrControl\UserControl_Clients.resx">
+      <DependentUpon>UserControl_Clients.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsrControl\UserControl_Interventions.resx">
       <DependentUpon>UserControl_Interventions.cs</DependentUpon>
     </EmbeddedResource>

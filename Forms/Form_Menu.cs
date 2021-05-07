@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GestionMatos.Forms
@@ -22,11 +15,12 @@ namespace GestionMatos.Forms
         {
             userControl_Interventions.Hide();
             userControl_Materiels.Hide();
+            userControl_Clients.Hide();
         }
 
         private void accueilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            userControl_Interventions.Hide();
+            hideAll();
         }
 
         private void interventionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,6 +28,7 @@ namespace GestionMatos.Forms
             userControl_Interventions.Show();
             userControl_Interventions.Display();
             userControl_Materiels.Hide();
+            userControl_Clients.Hide();
             
         }
 
@@ -42,6 +37,15 @@ namespace GestionMatos.Forms
             userControl_Materiels.Show();
             userControl_Materiels.Display();
             userControl_Interventions.Hide();
+            userControl_Clients.Hide();
+        }
+
+        private void clientsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            userControl_Clients.Show();
+            userControl_Clients.Display();
+            userControl_Interventions.Hide();
+            userControl_Materiels.Hide();
         }
     }
 }
