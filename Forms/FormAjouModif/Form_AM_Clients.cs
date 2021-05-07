@@ -20,15 +20,23 @@ namespace GestionMatos.Forms.FormAjouModif
 
         private void btnEnr_Click(object sender, EventArgs e)
         {
-            if (btnEnr.Text == "Ajouter")
+            if (txtNom.Text == "" || txtAdresse.Text == "")
             {
-                var dataClient = new Data_Clients(txtNom.Text.ToString().Trim(), txtAdresse.Text.Trim());
-                Fcts_Clients.AjouterClient(dataClient);
+                MessageBox.Show("Veuillez remplir les champs.", "Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
-            else if (btnEnr.Text == "Modifier")
+            else
             {
-                var dataClient = new Data_Clients(txtNom.Text.ToString().Trim(), txtAdresse.Text.Trim());
-                Fcts_Clients.ModifierClient(dataClient, id);
+                if (btnEnr.Text == "Ajouter")
+                {
+                    var dataClient = new Data_Clients(txtNom.Text.ToString().Trim(), txtAdresse.Text.Trim());
+                    Fcts_Clients.AjouterClient(dataClient);
+                }
+                else if (btnEnr.Text == "Modifier")
+                {
+                    var dataClient = new Data_Clients(txtNom.Text.ToString().Trim(), txtAdresse.Text.Trim());
+                    Fcts_Clients.ModifierClient(dataClient, id);
+                }
             }
 
             _parent.Display();

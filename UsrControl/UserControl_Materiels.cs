@@ -1,6 +1,8 @@
-﻿using GestionMatos.Fonctions;
+﻿using System.Data;
+using GestionMatos.Fonctions;
 using GestionMatos.Forms.FormAjouModif;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace GestionMatos.UsrControl
 {
@@ -46,10 +48,10 @@ namespace GestionMatos.UsrControl
                 formAm.descr = dgvMat.Rows[e.RowIndex].Cells[6].Value.ToString();
                 formAm.dateInstal = dgvMat.Rows[e.RowIndex].Cells[7].Value.ToString();
                 formAm.mtbf = dgvMat.Rows[e.RowIndex].Cells[8].Value.ToString();
-                formAm.perime = dgvMat.Rows[e.RowIndex].Cells[9].Value.ToString();
-                formAm.idType = dgvMat.Rows[e.RowIndex].Cells[10].Value.ToString();
-                formAm.idSite = dgvMat.Rows[e.RowIndex].Cells[11].Value.ToString();
-                formAm.idClient = dgvMat.Rows[e.RowIndex].Cells[12].Value.ToString();
+                formAm.perime = dgvMat.Rows[e.RowIndex].Cells[11].Value.ToString();
+                formAm.idType = dgvMat.Rows[e.RowIndex].Cells[12].Value.ToString();
+                formAm.idSite = dgvMat.Rows[e.RowIndex].Cells[13].Value.ToString();
+                formAm.idClient = dgvMat.Rows[e.RowIndex].Cells[14].Value.ToString();
                 formAm.MultipleCb();
                 formAm.ModifMat();
                 formAm.ShowDialog();
@@ -68,6 +70,17 @@ namespace GestionMatos.UsrControl
         {
             formAm.MultipleCb();
             formAm.ShowDialog();
+        }
+
+        private void btnRech_Click(object sender, System.EventArgs e)
+        {
+            Fcts_DB.AffichNRech("select m.id_mat,m.nom,m.referenece,m.descr,m.date_instal,m.mtbf,if(isnull((SELECT intervention.dateInter FROM materiel as t1 LEFT JOIN intervention ON intervention.id_mat = t1.id_mat WHERE t1.id_mat = m.id_mat order by intervention.dateInter desc limit 1)), m.date_instal, (SELECT intervention.dateInter FROM materiel as m LEFT JOIN intervention ON intervention.id_mat = m.id_mat WHERE m.id_mat = m.id_mat order by intervention.dateInter desc limit 1)) as dateDernInter, ADDDATE(if(isnull((SELECT intervention.dateInter FROM materiel as t1 LEFT JOIN intervention ON intervention.id_mat = t1.id_mat WHERE t1.id_mat = m.id_mat order by intervention.dateInter desc limit 1)), m.date_instal, (SELECT intervention.dateInter FROM materiel as t1 LEFT JOIN intervention ON intervention.id_mat = t1.id_mat WHERE t1.id_mat = m.id_mat order by intervention.dateInter desc limit 1)),m.mtbf) as Datelimite, if(perime = 'True', 'oui', 'non') as perimeON, t.nom  as nomType,s.nom as nomSite, c.nom as nomClient from materiel m left join typemateriel t on t.id_type = m.id_type left join site s on s.id_site = m.id_site left join client c on c.id_client = m.id_client WHERE m.id_mat LIKE '%"+cbMateriel.SelectedValue+"' and c.id_client like '%"+cbClient.SelectedValue+"' and t.id_type like  '%"+cbTypeMat.SelectedValue+"' and s.id_site like '%"+cbSite.SelectedValue+"' order by perimeON, nom", dgvMat);
+        }
+
+        private void btnReini_Click(object sender, System.EventArgs e)
+        {
+            cbMateriel.SelectedValue = cbSite.SelectedValue = cbTypeMat.SelectedValue = cbClient.SelectedValue = "";
+            Display();
         }
     }
 }

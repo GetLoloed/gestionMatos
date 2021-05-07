@@ -39,6 +39,7 @@ namespace GestionMatos.Forms
             this.userControl_Materiels = new GestionMatos.UsrControl.UserControl_Materiels();
             this.userControl_Interventions = new GestionMatos.UsrControl.UserControl_Interventions();
             this.userControl_Clients = new GestionMatos.UsrControl.UserControl_Clients();
+            this.userControl_Sites = new GestionMatos.UsrControl.UserControl_Sites();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,6 +104,7 @@ namespace GestionMatos.Forms
             this.sitesToolStripMenuItem.Name = "sitesToolStripMenuItem";
             this.sitesToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.sitesToolStripMenuItem.Text = "Sites";
+            this.sitesToolStripMenuItem.Click += new System.EventHandler(this.sitesToolStripMenuItem_Click);
             // 
             // userControl_Materiels
             // 
@@ -134,11 +136,22 @@ namespace GestionMatos.Forms
             this.userControl_Clients.Size = new System.Drawing.Size(1688, 777);
             this.userControl_Clients.TabIndex = 4;
             // 
+            // userControl_Sites
+            // 
+            this.userControl_Sites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Sites.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.userControl_Sites.Location = new System.Drawing.Point(0, 24);
+            this.userControl_Sites.Margin = new System.Windows.Forms.Padding(4);
+            this.userControl_Sites.Name = "userControl_Sites";
+            this.userControl_Sites.Size = new System.Drawing.Size(1688, 777);
+            this.userControl_Sites.TabIndex = 5;
+            // 
             // Form_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1688, 801);
+            this.Controls.Add(this.userControl_Sites);
             this.Controls.Add(this.userControl_Clients);
             this.Controls.Add(this.userControl_Materiels);
             this.Controls.Add(this.userControl_Interventions);
@@ -167,5 +180,6 @@ namespace GestionMatos.Forms
         private UsrControl.UserControl_Interventions userControl_Interventions;
         private UsrControl.UserControl_Materiels userControl_Materiels;
         private UsrControl.UserControl_Clients userControl_Clients;
+        private UsrControl.UserControl_Sites userControl_Sites;
     }
 }

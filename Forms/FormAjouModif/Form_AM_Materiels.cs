@@ -3,7 +3,6 @@ using GestionMatos.Fonctions;
 using GestionMatos.UsrControl;
 using System;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace GestionMatos.Forms.FormAjouModif
 {
@@ -21,7 +20,6 @@ namespace GestionMatos.Forms.FormAjouModif
 
         public void MultipleCb()
         {
-            // Recupere les données de differentes tables pour les mettres dans une Combobox
             Fcts_DB.ComboData("select '' as id_type, '-- Choisir un Type --' as nom union select id_type, nom from typemateriel", "nom", "id_type", cbType);
             Fcts_DB.ComboData("select '' as id_site, '-- Choisir un Site --' as nom union select id_site, nom from site", "nom", "id_site", cbSite);
             Fcts_DB.ComboData("select '' as id_client, '-- Choisir un Client --' as nom union select id_client, nom from client", "nom", "id_client", cbClient);
@@ -43,19 +41,31 @@ namespace GestionMatos.Forms.FormAjouModif
         }
         private void btnEnr_Click(object sender, EventArgs e)
         {
-            if (btnEnr.Text == "Ajouter")
+            if (txtNom.Text == "" || txtRef.Text == "" || cbType.SelectedValue == "" || cbClient.SelectedValue == "" || cbSite.SelectedValue == "" || nUpMTBF.Text == "" || txtDescr.Text == "")
             {
-                var dataMat = new Data_Materiels(txtNom.Text.Trim(), txtRef.Text.Trim(),
-                    txtDescr.Text.ToString().Trim(), dtpInstal.Text.ToString().Trim(), nUpMTBF.Text.ToString().Trim(), checkbPerime.Checked.ToString(),cbType.SelectedValue.ToString(), cbSite.SelectedValue.ToString(),
-                    cbClient.SelectedValue.ToString());
-                Fcts_Materiels.AjoutMateriel(dataMat);
+                MessageBox.Show("Veuillez remplir les champs.", "Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
-            else if (btnEnr.Text == "Modifier")
+            else
             {
-                var dataMat = new Data_Materiels(txtNom.Text.Trim(), txtRef.Text.Trim(),
-                    txtDescr.Text.ToString().Trim(), dtpInstal.Text.ToString().Trim(), nUpMTBF.Text.ToString().Trim(),checkbPerime.Checked.ToString(), cbType.SelectedValue.ToString(), cbSite.SelectedValue.ToString(),
-                    cbClient.SelectedValue.ToString());
-                Fcts_Materiels.ModifMat(dataMat, id);
+                if (btnEnr.Text == "Ajouter")
+                {
+                    var dataMat = new Data_Materiels(txtNom.Text.Trim(), txtRef.Text.Trim(),
+                        txtDescr.Text.ToString().Trim(), dtpInstal.Text.ToString().Trim(),
+                        nUpMTBF.Text.ToString().Trim(), checkbPerime.Checked.ToString(),
+                        cbType.SelectedValue.ToString(), cbSite.SelectedValue.ToString(),
+                        cbClient.SelectedValue.ToString());
+                    Fcts_Materiels.AjoutMateriel(dataMat);
+                }
+                else if (btnEnr.Text == "Modifier")
+                {
+                    var dataMat = new Data_Materiels(txtNom.Text.Trim(), txtRef.Text.Trim(),
+                        txtDescr.Text.ToString().Trim(), dtpInstal.Text.ToString().Trim(),
+                        nUpMTBF.Text.ToString().Trim(), checkbPerime.Checked.ToString(),
+                        cbType.SelectedValue.ToString(), cbSite.SelectedValue.ToString(),
+                        cbClient.SelectedValue.ToString());
+                    Fcts_Materiels.ModifMat(dataMat, id);
+                }
             }
 
             _parent.Display();

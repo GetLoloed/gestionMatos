@@ -30,7 +30,7 @@ namespace GestionMatos.UsrControl
         private void InitializeComponent()
         {
             this.lblGestInter = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTop = new System.Windows.Forms.Panel();
             this.dgvMat = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +38,8 @@ namespace GestionMatos.UsrControl
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,15 +47,17 @@ namespace GestionMatos.UsrControl
             this.Column11 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlActions = new System.Windows.Forms.Panel();
+            this.btnReini = new System.Windows.Forms.Button();
+            this.btnRech = new System.Windows.Forms.Button();
             this.cbSite = new System.Windows.Forms.ComboBox();
             this.cbTypeMat = new System.Windows.Forms.ComboBox();
             this.cbMateriel = new System.Windows.Forms.ComboBox();
             this.cbClient = new System.Windows.Forms.ComboBox();
             this.btnAjMat = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMat)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.pnlActions.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblGestInter
@@ -68,16 +72,16 @@ namespace GestionMatos.UsrControl
             this.lblGestInter.TabIndex = 2;
             this.lblGestInter.Text = "Gestion des materiels";
             // 
-            // panel1
+            // pnlTop
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(91)))), ((int)(((byte)(145)))));
-            this.panel1.Controls.Add(this.lblGestInter);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1668, 44);
-            this.panel1.TabIndex = 1;
+            this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(91)))), ((int)(((byte)(145)))));
+            this.pnlTop.Controls.Add(this.lblGestInter);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(1668, 44);
+            this.pnlTop.TabIndex = 1;
             // 
             // dgvMat
             // 
@@ -97,6 +101,8 @@ namespace GestionMatos.UsrControl
             this.Column4,
             this.Column5,
             this.Column6,
+            this.Column14,
+            this.Column15,
             this.Column7,
             this.Column8,
             this.Column9,
@@ -150,6 +156,18 @@ namespace GestionMatos.UsrControl
             this.Column6.HeaderText = "MTBF (en jours)";
             this.Column6.Name = "Column6";
             // 
+            // Column14
+            // 
+            this.Column14.DataPropertyName = "dateDernInter";
+            this.Column14.HeaderText = "Date derniere intervention";
+            this.Column14.Name = "Column14";
+            // 
+            // Column15
+            // 
+            this.Column15.DataPropertyName = "Datelimite";
+            this.Column15.HeaderText = "Date limite ";
+            this.Column15.Name = "Column15";
+            // 
             // Column7
             // 
             this.Column7.DataPropertyName = "perimeON";
@@ -199,18 +217,40 @@ namespace GestionMatos.UsrControl
             this.Column13.Text = "Supprimer";
             this.Column13.UseColumnTextForButtonValue = true;
             // 
-            // panel2
+            // pnlActions
             // 
-            this.panel2.Controls.Add(this.cbSite);
-            this.panel2.Controls.Add(this.cbTypeMat);
-            this.panel2.Controls.Add(this.cbMateriel);
-            this.panel2.Controls.Add(this.cbClient);
-            this.panel2.Controls.Add(this.btnAjMat);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 44);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1668, 43);
-            this.panel2.TabIndex = 3;
+            this.pnlActions.Controls.Add(this.btnReini);
+            this.pnlActions.Controls.Add(this.btnRech);
+            this.pnlActions.Controls.Add(this.cbSite);
+            this.pnlActions.Controls.Add(this.cbTypeMat);
+            this.pnlActions.Controls.Add(this.cbMateriel);
+            this.pnlActions.Controls.Add(this.cbClient);
+            this.pnlActions.Controls.Add(this.btnAjMat);
+            this.pnlActions.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlActions.Location = new System.Drawing.Point(0, 44);
+            this.pnlActions.Name = "pnlActions";
+            this.pnlActions.Size = new System.Drawing.Size(1668, 43);
+            this.pnlActions.TabIndex = 3;
+            // 
+            // btnReini
+            // 
+            this.btnReini.Location = new System.Drawing.Point(1114, 10);
+            this.btnReini.Name = "btnReini";
+            this.btnReini.Size = new System.Drawing.Size(75, 23);
+            this.btnReini.TabIndex = 7;
+            this.btnReini.Text = "button2";
+            this.btnReini.UseVisualStyleBackColor = true;
+            this.btnReini.Click += new System.EventHandler(this.btnReini_Click);
+            // 
+            // btnRech
+            // 
+            this.btnRech.Location = new System.Drawing.Point(1033, 10);
+            this.btnRech.Name = "btnRech";
+            this.btnRech.Size = new System.Drawing.Size(75, 23);
+            this.btnRech.TabIndex = 4;
+            this.btnRech.Text = "button1";
+            this.btnRech.UseVisualStyleBackColor = true;
+            this.btnRech.Click += new System.EventHandler(this.btnRech_Click);
             // 
             // cbSite
             // 
@@ -262,16 +302,16 @@ namespace GestionMatos.UsrControl
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvMat);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlActions);
+            this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControl_Materiels";
             this.Size = new System.Drawing.Size(1668, 690);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMat)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.pnlActions.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -279,9 +319,9 @@ namespace GestionMatos.UsrControl
         #endregion
 
         private System.Windows.Forms.Label lblGestInter;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.DataGridView dgvMat;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlActions;
         private System.Windows.Forms.ComboBox cbSite;
         private System.Windows.Forms.ComboBox cbTypeMat;
         private System.Windows.Forms.ComboBox cbMateriel;
@@ -293,6 +333,8 @@ namespace GestionMatos.UsrControl
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
@@ -300,5 +342,7 @@ namespace GestionMatos.UsrControl
         private System.Windows.Forms.DataGridViewButtonColumn Column11;
         private System.Windows.Forms.DataGridViewButtonColumn Column12;
         private System.Windows.Forms.DataGridViewButtonColumn Column13;
+        private System.Windows.Forms.Button btnReini;
+        private System.Windows.Forms.Button btnRech;
     }
 }

@@ -29,7 +29,7 @@ namespace GestionMatos.UsrControl
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblGestInter = new System.Windows.Forms.Label();
             this.btnAjInter = new System.Windows.Forms.Button();
@@ -53,10 +53,22 @@ namespace GestionMatos.UsrControl
             this.Column12 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgvAlerte = new System.Windows.Forms.DataGridView();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnRetour = new System.Windows.Forms.Button();
+            this.btnReini = new System.Windows.Forms.Button();
+            this.btnRech = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlerte)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,6 +109,9 @@ namespace GestionMatos.UsrControl
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnReini);
+            this.panel2.Controls.Add(this.btnRech);
+            this.panel2.Controls.Add(this.btnRetour);
             this.panel2.Controls.Add(this.cbSite);
             this.panel2.Controls.Add(this.cbTypeMat);
             this.panel2.Controls.Add(this.cbMateriel);
@@ -156,6 +171,7 @@ namespace GestionMatos.UsrControl
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.dgvAlerte);
             this.panel3.Controls.Add(this.dgvInter);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 87);
@@ -269,16 +285,121 @@ namespace GestionMatos.UsrControl
             // 
             // Column10
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(92)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(92)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(92)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(92)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column10.HeaderText = "";
             this.Column10.Name = "Column10";
             this.Column10.Text = "Supprimer";
             this.Column10.UseColumnTextForButtonValue = true;
+            // 
+            // dgvAlerte
+            // 
+            this.dgvAlerte.AllowUserToAddRows = false;
+            this.dgvAlerte.AllowUserToDeleteRows = false;
+            this.dgvAlerte.AllowUserToResizeColumns = false;
+            this.dgvAlerte.AllowUserToResizeRows = false;
+            this.dgvAlerte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAlerte.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAlerte.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAlerte.CausesValidation = false;
+            this.dgvAlerte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlerte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19});
+            this.dgvAlerte.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAlerte.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvAlerte.Location = new System.Drawing.Point(0, 0);
+            this.dgvAlerte.Name = "dgvAlerte";
+            this.dgvAlerte.RowHeadersVisible = false;
+            this.dgvAlerte.Size = new System.Drawing.Size(1668, 603);
+            this.dgvAlerte.TabIndex = 1;
+            this.dgvAlerte.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlerte_CellClick);
+            // 
+            // Column13
+            // 
+            this.Column13.DataPropertyName = "id_mat";
+            this.Column13.HeaderText = "ID";
+            this.Column13.Name = "Column13";
+            // 
+            // Column14
+            // 
+            this.Column14.DataPropertyName = "nom";
+            this.Column14.HeaderText = "Nom du materiel";
+            this.Column14.Name = "Column14";
+            // 
+            // Column15
+            // 
+            this.Column15.DataPropertyName = "nom1";
+            this.Column15.HeaderText = "Nom du client";
+            this.Column15.Name = "Column15";
+            // 
+            // Column16
+            // 
+            this.Column16.DataPropertyName = "nom2";
+            this.Column16.HeaderText = "Nom du site";
+            this.Column16.Name = "Column16";
+            // 
+            // Column17
+            // 
+            this.Column17.DataPropertyName = "dateDernInter";
+            this.Column17.HeaderText = "Date derniere intervention";
+            this.Column17.Name = "Column17";
+            // 
+            // Column18
+            // 
+            this.Column18.DataPropertyName = "Datelimite";
+            this.Column18.HeaderText = "date limite avant intervention";
+            this.Column18.Name = "Column18";
+            // 
+            // Column19
+            // 
+            this.Column19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column19.HeaderText = "";
+            this.Column19.Name = "Column19";
+            this.Column19.Text = "Programmer";
+            this.Column19.UseColumnTextForButtonValue = true;
+            // 
+            // btnRetour
+            // 
+            this.btnRetour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
+            this.btnRetour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetour.ForeColor = System.Drawing.Color.White;
+            this.btnRetour.Location = new System.Drawing.Point(3, 7);
+            this.btnRetour.Name = "btnRetour";
+            this.btnRetour.Size = new System.Drawing.Size(80, 28);
+            this.btnRetour.TabIndex = 7;
+            this.btnRetour.Text = "Retour";
+            this.btnRetour.UseVisualStyleBackColor = false;
+            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
+            // 
+            // btnReini
+            // 
+            this.btnReini.Location = new System.Drawing.Point(1425, 12);
+            this.btnReini.Name = "btnReini";
+            this.btnReini.Size = new System.Drawing.Size(75, 23);
+            this.btnReini.TabIndex = 9;
+            this.btnReini.Text = "button2";
+            this.btnReini.UseVisualStyleBackColor = true;
+            this.btnReini.Click += new System.EventHandler(this.btnReini_Click);
+            // 
+            // btnRech
+            // 
+            this.btnRech.Location = new System.Drawing.Point(1344, 12);
+            this.btnRech.Name = "btnRech";
+            this.btnRech.Size = new System.Drawing.Size(75, 23);
+            this.btnRech.TabIndex = 8;
+            this.btnRech.Text = "button1";
+            this.btnRech.UseVisualStyleBackColor = true;
+            this.btnRech.Click += new System.EventHandler(this.btnRech_Click);
             // 
             // UserControl_Interventions
             // 
@@ -296,6 +417,7 @@ namespace GestionMatos.UsrControl
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlerte)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,5 +447,16 @@ namespace GestionMatos.UsrControl
         private System.Windows.Forms.DataGridViewButtonColumn Column12;
         private System.Windows.Forms.DataGridViewButtonColumn Column9;
         private System.Windows.Forms.DataGridViewButtonColumn Column10;
+        private System.Windows.Forms.DataGridView dgvAlerte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewButtonColumn Column19;
+        private System.Windows.Forms.Button btnRetour;
+        private System.Windows.Forms.Button btnReini;
+        private System.Windows.Forms.Button btnRech;
     }
 }

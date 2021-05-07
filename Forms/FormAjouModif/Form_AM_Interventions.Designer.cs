@@ -30,31 +30,42 @@ namespace GestionMatos.Forms.FormAjouModif
         private void InitializeComponent()
         {
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.lblAM = new System.Windows.Forms.Label();
             this.cbMateriel = new System.Windows.Forms.ComboBox();
             this.txtCom = new System.Windows.Forms.RichTextBox();
             this.pnlMid = new System.Windows.Forms.Panel();
-            this.gbMat = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpInter = new System.Windows.Forms.DateTimePicker();
+            this.gbMat = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEnr = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.pnlMid.SuspendLayout();
-            this.gbMat.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.gbMat.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(91)))), ((int)(((byte)(145)))));
-            this.pnlTop.Controls.Add(this.label1);
+            this.pnlTop.Controls.Add(this.lblAM);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(275, 55);
             this.pnlTop.TabIndex = 0;
+            // 
+            // lblAM
+            // 
+            this.lblAM.AutoSize = true;
+            this.lblAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblAM.ForeColor = System.Drawing.Color.White;
+            this.lblAM.Location = new System.Drawing.Point(13, 18);
+            this.lblAM.Name = "lblAM";
+            this.lblAM.Size = new System.Drawing.Size(250, 25);
+            this.lblAM.TabIndex = 6;
+            this.lblAM.Text = "Programmation Intervention";
             // 
             // cbMateriel
             // 
@@ -83,16 +94,6 @@ namespace GestionMatos.Forms.FormAjouModif
             this.pnlMid.Size = new System.Drawing.Size(251, 366);
             this.pnlMid.TabIndex = 4;
             // 
-            // gbMat
-            // 
-            this.gbMat.Controls.Add(this.cbMateriel);
-            this.gbMat.Location = new System.Drawing.Point(3, 3);
-            this.gbMat.Name = "gbMat";
-            this.gbMat.Size = new System.Drawing.Size(243, 59);
-            this.gbMat.TabIndex = 4;
-            this.gbMat.TabStop = false;
-            this.gbMat.Text = "Materiel";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtpInter);
@@ -111,6 +112,16 @@ namespace GestionMatos.Forms.FormAjouModif
             this.dtpInter.Name = "dtpInter";
             this.dtpInter.Size = new System.Drawing.Size(227, 23);
             this.dtpInter.TabIndex = 0;
+            // 
+            // gbMat
+            // 
+            this.gbMat.Controls.Add(this.cbMateriel);
+            this.gbMat.Location = new System.Drawing.Point(3, 3);
+            this.gbMat.Name = "gbMat";
+            this.gbMat.Size = new System.Drawing.Size(243, 59);
+            this.gbMat.TabIndex = 4;
+            this.gbMat.TabStop = false;
+            this.gbMat.Text = "Materiel";
             // 
             // groupBox2
             // 
@@ -134,17 +145,6 @@ namespace GestionMatos.Forms.FormAjouModif
             this.btnEnr.UseVisualStyleBackColor = false;
             this.btnEnr.Click += new System.EventHandler(this.btnEnr_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(250, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Programmation Intervention";
-            // 
             // Form_AM_Interventions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -155,15 +155,15 @@ namespace GestionMatos.Forms.FormAjouModif
             this.Controls.Add(this.pnlMid);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_AM_Interventions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Interventions";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnlMid.ResumeLayout(false);
-            this.gbMat.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.gbMat.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -180,6 +180,6 @@ namespace GestionMatos.Forms.FormAjouModif
         private System.Windows.Forms.DateTimePicker dtpInter;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnEnr;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAM;
     }
 }

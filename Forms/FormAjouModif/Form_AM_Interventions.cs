@@ -17,6 +17,7 @@ namespace GestionMatos.Forms.FormAjouModif
             _parent = parent;
         }
 
+
         public void FillCb()
         {
             Fcts_DB.ComboData(
@@ -26,6 +27,7 @@ namespace GestionMatos.Forms.FormAjouModif
 
         public void Modifier()
         {
+            lblAM.Text = "Modification intervention";
             btnEnr.Text = "Modifier";
             cbMateriel.SelectedValue = idMat;
             txtCom.Text = com;
@@ -34,8 +36,9 @@ namespace GestionMatos.Forms.FormAjouModif
 
         public void Programmer()
         {
-            cbMateriel.Text = idMat;
+            cbMateriel.SelectedValue = idMat;
             txtCom.Text = com;
+            dtpInter.Text = dateInter;
         }
 
         public void Clear()
@@ -46,17 +49,25 @@ namespace GestionMatos.Forms.FormAjouModif
 
         private void btnEnr_Click(object sender, EventArgs e)
         {
-            if (btnEnr.Text == "Programmer")
+            if (txtCom.Text == "" || cbMateriel.SelectedValue == "" || dtpInter.Text == "")
             {
-                var dataInter = new Data_Interventions(dtpInter.Text.Trim(), txtCom.Text.Trim(),
-                    cbMateriel.SelectedValue.ToString());
-                Fcts_Interventions.AjoutInter(dataInter);
+                MessageBox.Show("Veuillez remplir les champs.", "Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
-            else if (btnEnr.Text == "Modifier")
+            else
             {
-                var dataInter = new Data_Interventions(dtpInter.Text.ToString(), txtCom.Text.Trim(),
-                    cbMateriel.SelectedValue.ToString());
-                Fcts_Interventions.ModifInter(dataInter, id);
+                if (btnEnr.Text == "Programmer")
+                {
+                    var dataInter = new Data_Interventions(dtpInter.Text.Trim(), txtCom.Text.Trim(),
+                        cbMateriel.SelectedValue.ToString());
+                    Fcts_Interventions.AjoutInter(dataInter);
+                }
+                else if (btnEnr.Text == "Modifier")
+                {
+                    var dataInter = new Data_Interventions(dtpInter.Text.ToString(), txtCom.Text.Trim(),
+                        cbMateriel.SelectedValue.ToString());
+                    Fcts_Interventions.ModifInter(dataInter, id);
+                } 
             }
 
             _parent.Display();

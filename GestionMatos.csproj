@@ -92,10 +92,12 @@
     <Compile Include="Data\Data_Clients.cs" />
     <Compile Include="Data\Data_Interventions.cs" />
     <Compile Include="Data\Data_Materiels.cs" />
+    <Compile Include="Data\Data_Sites.cs" />
     <Compile Include="Fonctions\Fcts_Clients.cs" />
     <Compile Include="Fonctions\Fcts_DB.cs" />
     <Compile Include="Fonctions\Fcts_Interventions.cs" />
     <Compile Include="Fonctions\Fcts_Materiels.cs" />
+    <Compile Include="Fonctions\Fcts_Sites.cs" />
     <Compile Include="Forms\FormAjouModif\Form_AM_Clients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +115,12 @@
     </Compile>
     <Compile Include="Forms\FormAjouModif\Form_AM_Materiels.Designer.cs">
       <DependentUpon>Form_AM_Materiels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAjouModif\Form_AM_Sites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAjouModif\Form_AM_Sites.Designer.cs">
+      <DependentUpon>Form_AM_Sites.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form_Menu.cs">
       <SubType>Form</SubType>
@@ -140,6 +148,12 @@
     <Compile Include="UsrControl\UserControl_Materiels.Designer.cs">
       <DependentUpon>UserControl_Materiels.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsrControl\UserControl_Sites.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsrControl\UserControl_Sites.Designer.cs">
+      <DependentUpon>UserControl_Sites.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\FormAjouModif\Form_AM_Clients.resx">
       <DependentUpon>Form_AM_Clients.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAjouModif\Form_AM_Materiels.resx">
       <DependentUpon>Form_AM_Materiels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAjouModif\Form_AM_Sites.resx">
+      <DependentUpon>Form_AM_Sites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Menu.resx">
       <DependentUpon>Form_Menu.cs</DependentUpon>
@@ -169,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UsrControl\UserControl_Materiels.resx">
       <DependentUpon>UserControl_Materiels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsrControl\UserControl_Sites.resx">
+      <DependentUpon>UserControl_Sites.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
